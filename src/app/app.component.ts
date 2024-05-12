@@ -1,47 +1,62 @@
 import { Component } from '@angular/core';
 import { PasswordService } from './password.service';
-import { FormsModule } from '@angular/forms';
+import {
+  Form,
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
   title = 'password-gen';
 
-  password = '';
+  form: FormGroup;
+  password?: string;
   buttonText = 'Copy Password';
+  subscription?: Subscription;
 
-  length = 24;
-  numbers = false;
-  symbols = false;
-  lowercase = true;
-  uppercase = false;
+  constructor(
+    private passwordService: PasswordService,
+    private fb: FormBuilder
+  ) {
+    this.form = this.fb.group({
+      length: [32],
+      numbers: [false],
+      symbols: [false],
+      lowercase: [true],
+      uppercase: [false],
+    });
+  }
 
-  constructor(private passwordService: PasswordService) {}
+  ngOnInit() {
+    this.generatePassword(this.form.value);
 
-  onGeneratePasswordClick() {
-    try {
-      this.password = this.passwordService.generatePassword(
-        this.length,
-        this.numbers,
-        this.symbols,
-        this.lowercase,
-        this.uppercase
-      );
+    this.subscription = this.form.valueChanges.subscribe((values) =>
+      this.generatePassword(values)
+    );
+  }
 
-      this.buttonText = 'Copy Password';
-    } catch (error) {
-      // Display error to the user
-      alert(
-        'An error occurred while generating the password. Please try again.'
-      );
-    }
+  generatePassword(values: any) {
+    this.password = this.passwordService.generatePassword(
+      values.length,
+      values.numbers,
+      values.symbols,
+      values.lowercase,
+      values.uppercase
+    );
   }
 
   onCopyPasswordClick() {
+    if (!this.password) return;
+
     navigator.clipboard.writeText(this.password);
     this.buttonText = 'Copied!';
 
@@ -49,5 +64,9 @@ export class AppComponent {
     setTimeout(() => {
       this.buttonText = 'Copy Password';
     }, 3000);
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) this.subscription.unsubscribe();
   }
 }

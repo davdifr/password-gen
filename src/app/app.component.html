@@ -4,90 +4,70 @@
 
     <div class="bg-white shadow sm:rounded-lg">
       <div class="px-4 py-5 sm:p-6">
-        <h3 class="text-base font-semibold leading-6 text-gray-900">
-          Custom Password Generator
-        </h3>
         <div class="mt-2 max-w-xl text-sm text-gray-500">
           <!-- Options -->
 
           <fieldset>
             <legend class="sr-only">Options</legend>
-            <div class="space-y-5">
+            <form [formGroup]="form" class="space-y-5">
               <div class="relative flex items-start">
                 <div class="flex h-6 items-center">
                   <input
-                    id="comments"
-                    aria-describedby="comments-description"
-                    name="comments"
+                    name="numbers"
                     type="checkbox"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                    [(ngModel)]="numbers"
+                    formControlName="numbers"
                   />
                 </div>
                 <div class="ml-3 text-sm leading-6">
-                  <label for="comments" class="font-medium text-gray-900">
-                    Include Numbers
-                  </label>
-                  <span id="comments-description" class="text-gray-500">
-                    <span class="sr-only">Numbers </span>Include numeric digits
-                    (0-9) in the password.
-                  </span>
+                  <label for="comments" class="font-medium text-gray-900"
+                    >Numbers</label
+                  >
+                  <p id="comments-description" class="text-gray-500">
+                    Include numeric digits (0-9) in the password.
+                  </p>
                 </div>
               </div>
               <div class="relative flex items-start">
                 <div class="flex h-6 items-center">
                   <input
-                    id="candidates"
-                    aria-describedby="candidates-description"
-                    name="candidates"
+                    name="symbols"
                     type="checkbox"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                    [(ngModel)]="symbols"
+                    formControlName="symbols"
                   />
                 </div>
                 <div class="ml-3 text-sm leading-6">
-                  <label for="candidates" class="font-medium text-gray-900">
-                    Include Symbols
-                  </label>
-                  <span id="candidates-description" class="text-gray-500">
-                    <span class="sr-only">Symbols </span>Include special
-                    characters (e.g., !, #, $) in the password.
-                  </span>
+                  <label for="candidates" class="font-medium text-gray-900"
+                    >Symbols</label
+                  >
+                  <p id="candidates-description" class="text-gray-500">
+                    Include special characters (e.g., !, #, $) in the password.
+                  </p>
                 </div>
               </div>
               <div class="relative flex items-start">
                 <div class="flex h-6 items-center">
                   <input
-                    id="offers"
-                    aria-describedby="offers-description"
-                    name="offers"
+                    name="uppercase"
                     type="checkbox"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                    [(ngModel)]="uppercase"
+                    formControlName="uppercase"
                   />
                 </div>
                 <div class="ml-3 text-sm leading-6">
-                  <label for="offers" class="font-medium text-gray-900">
-                    Include Uppercase Characters
-                  </label>
-                  <span id="offers-description" class="text-gray-500">
-                    <span class="sr-only">Uppercase </span>Include uppercase
-                    letters (A-Z) in the password.
-                  </span>
+                  <label for="offers" class="font-medium text-gray-900"
+                    >Uppercase</label
+                  >
+                  <p id="offers-description" class="text-gray-500">
+                    Include uppercase letters (A-Z) in the password.
+                  </p>
                 </div>
               </div>
-            </div>
+            </form>
           </fieldset>
+
           <!-- /Options -->
-        </div>
-        <div class="mt-5">
-          <button
-            type="button"
-            class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-            (click)="onGeneratePasswordClick()"
-          >
-            Generate Custom Password
-          </button>
         </div>
 
         <!-- Password Display Section -->
