@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PasswordService } from './password.service';
+import { PasswordService } from './services/password/password.service';
 import {
   Form,
   FormBuilder,
