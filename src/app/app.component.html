@@ -21,7 +21,7 @@
           <div class="relative rounded-lg border-2 border-base-300 p-[10px]">
             <i-lucide
               name="rectangle-ellipsis"
-              class="h-5 w-5 stroke-base-500 rectangle-ellipsis"
+              class="rectangle-ellipsis h-5 w-5 stroke-base-500"
             ></i-lucide>
             <!-- connecting line between boxes -->
             <div
@@ -40,7 +40,7 @@
           <div class="relative rounded-lg border-2 border-base-300 p-[10px]">
             <i-lucide
               name="text-cursor-input"
-              class="h-5 w-5 stroke-base-500 text-cursor-input"
+              class="text-cursor-input h-5 w-5 stroke-base-500"
             ></i-lucide>
 
             <!-- connecting line between boxes -->
@@ -60,7 +60,7 @@
           <div class="relative rounded-lg border-2 border-base-300 p-[10px]">
             <i-lucide
               name="command"
-              class="h-5 w-5 stroke-base-500 command"
+              class="command h-5 w-5 stroke-base-500"
             ></i-lucide>
 
             <!-- connecting line between boxes -->
@@ -80,7 +80,7 @@
           <div class="relative rounded-lg border-2 border-base-300 p-[10px]">
             <i-lucide
               name="type"
-              class="h-5 w-5 stroke-base-500 type"
+              class="type h-5 w-5 stroke-base-500"
             ></i-lucide>
           </div>
           <!-- box text -->
@@ -107,7 +107,9 @@
       ></div>
     </div>
     <!-- pw generator -->
-    <div class="max-w-[450px] space-y-4 rounded-lg bg-base-200 px-7 py-8">
+    <div
+      class="max-w-[440px] space-y-4 overflow-auto rounded-lg bg-base-200 px-7 py-8"
+    >
       <!-- pw generator content -->
       <!-- main icon -->
       <div
@@ -209,11 +211,13 @@
         </div>
 
         <!-- password display section -->
-        <div class="mt-6 space-y-6 min-h-52 flex justify-end flex-col">
+        <div class="mt-6 flex min-h-52 flex-col justify-end space-y-6">
           <!-- display -->
           <div class="flex items-start gap-4 rounded-md bg-base-300 p-4">
             <i-lucide name="key-round" class="key-round"></i-lucide>
-            <p class="text-md text-base-600 break-all">{{ password }}</p>
+            <p class="break-all text-sm text-base-600 lg:text-base">
+              {{ password }}
+            </p>
           </div>
 
           <!-- button -->
