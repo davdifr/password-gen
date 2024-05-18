@@ -193,7 +193,7 @@
               id="range"
               type="range"
               min="8"
-              max="128"
+              max="64"
               class="h-[7px] w-full cursor-pointer appearance-none rounded"
               formControlName="length"
             />
@@ -202,19 +202,20 @@
               id="progress-bar"
               class="absolute z-10 h-[7px] rounded bg-primary"
               [ngStyle]="{
-                width: ((form.value.length - 6) / 122) * 100 + '%'
+                width: ((form.value.length - 6) / 58) * 100 + '%'
               }"
             ></div>
           </fieldset>
         </div>
-        <!-- ((value - minValue) / (maxValue - minValue)) * 100 + "%" -->
 
         <!-- password display section -->
-        <div class="mt-4 flex min-h-60 flex-col justify-end space-y-6">
+        <div class="mt-14 flex flex-col space-y-6">
           <!-- display -->
-          <div class="flex items-start gap-4 rounded-md bg-base-300 p-4">
+          <div
+            class="flex h-[92px] items-start gap-3 rounded-md bg-base-300 p-4 md:h-[80px]"
+          >
             <i-lucide name="key-round" class="key-round"></i-lucide>
-            <p class="break-all text-sm text-base-600 lg:text-base">
+            <p class="break-all font-mono text-sm text-base-600 lg:text-base">
               {{ password }}
             </p>
           </div>

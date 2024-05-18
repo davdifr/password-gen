@@ -14,6 +14,9 @@ module.exports = {
       },
       primary: "hsl(var(--primary) / <alpha-value>)",
     },
+    fontFamily: {
+      mono: ["Roboto Mono", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [require("@tailwindcss/forms")],
