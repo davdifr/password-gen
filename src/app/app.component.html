@@ -196,13 +196,13 @@
               type="range"
               min="8"
               max="128"
-              class="h-2 w-full cursor-pointer appearance-none rounded"
+              class="h-[7px] w-full cursor-pointer appearance-none rounded"
               formControlName="length"
             />
             <!-- progress bar styled with primary color -->
             <div
               id="progress-bar"
-              class="absolute z-10 h-2 rounded bg-primary"
+              class="absolute z-10 h-[7px] rounded bg-primary"
               [ngStyle]="{
                 width: ((form.value.length - 6) / 122) * 100 + '%'
               }"
