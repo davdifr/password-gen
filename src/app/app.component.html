@@ -10,7 +10,6 @@
         <div
           class="relative flex h-14 w-14 items-center justify-center rounded-xl border border-base-900/30 bg-base-900/40 backdrop-blur-md"
         >
-          <!-- Lucide icon (with CDN) to replace with favourite iconpack -->
           <i-lucide name="key-round" class="key-round"></i-lucide>
         </div>
       </div>
@@ -117,7 +116,6 @@
         <div
           class="relative flex h-14 w-14 items-center justify-center rounded-xl border border-base-900/20 bg-base-900/20 backdrop-blur-md"
         >
-          <!-- Lucide icon (with CDN) to replace with favourite iconpack -->
           <i-lucide name="key-round" class="key-round"></i-lucide>
         </div>
       </div>
@@ -211,14 +209,11 @@
         </div>
 
         <!-- password display section -->
-        <div class="mt-16 space-y-6">
+        <div class="mt-6 space-y-6 min-h-52 flex justify-end flex-col">
           <!-- display -->
-          <div
-            class="flex w-full items-center gap-4 rounded-md bg-base-300 p-4"
-          >
-            <!-- Lucide icon (with CDN) to replace with favourite iconpack -->
+          <div class="flex items-start gap-4 rounded-md bg-base-300 p-4">
             <i-lucide name="key-round" class="key-round"></i-lucide>
-            <p class="text-md text-base-600">{{ password }}</p>
+            <p class="text-md text-base-600 break-all">{{ password }}</p>
           </div>
 
           <!-- button -->
@@ -227,7 +222,6 @@
             (click)="onCopyPasswordClick()"
           >
             <span class="mx-auto flex items-center gap-2">
-              <!-- Lucide icon (with CDN) to replace with favourite iconpack -->
               <i-lucide name="copy" class="copy"></i-lucide>
               {{ buttonText }}
             </span>
