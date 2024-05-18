@@ -202,13 +202,14 @@
             <!-- progress bar styled with primary color -->
             <div
               id="progress-bar"
-              class="absolute top-[11px] z-10 h-[7px] rounded bg-primary"
+              class="absolute top-[11px] z-10 h-[9px] rounded-s bg-primary"
               [ngStyle]="{
                 width: ((form.value.length - 8) / 120) * 100 + '%'
               }"
             ></div>
           </fieldset>
         </div>
+        <!-- ((value - minValue) / (maxValue - minValue)) * 100 + "%" -->
 
         <!-- password display section -->
         <div class="mt-6 flex min-h-52 flex-col justify-end space-y-6">
