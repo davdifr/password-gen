@@ -16,6 +16,7 @@ module.exports = {
     },
     fontFamily: {
       mono: ["Roboto Mono", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
     },
     extend: {},
   },
