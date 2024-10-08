@@ -1,6 +1,7 @@
 import {
   Command,
   Copy,
+  Home,
   KeyRound,
   RectangleEllipsis,
   TextCursorInput,
