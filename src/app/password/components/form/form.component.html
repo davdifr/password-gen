@@ -1,0 +1,78 @@
+<form [formGroup]="passwordForm">
+  <fieldset>
+    <legend class="sr-only">Options</legend>
+  </fieldset>
+
+  <!-- form options -->
+  <div class="mt-5 space-y-9">
+    <div formGroupName="characterTypes">
+      <!-- numbers checkbox -->
+      <fieldset class="flex gap-2">
+        <input
+          name="numbers"
+          type="checkbox"
+          class="form-checkbox mt-1 h-4 w-4 rounded border-primary text-primary focus:ring-primary focus:ring-offset-base-200"
+          formControlName="numbers"
+        />
+        <div class="flex flex-col">
+          <label class="text-base-600" for="numbers">Numbers</label>
+          <p class="text-sm text-base-500">
+            Include digits (0-9) in the password
+          </p>
+        </div>
+      </fieldset>
+
+      <!-- symbols checkbox -->
+      <fieldset class="flex gap-2">
+        <input
+          name="symbols"
+          type="checkbox"
+          class="form-checkbox mt-1 h-4 w-4 rounded border-primary text-primary focus:ring-primary focus:ring-offset-base-200"
+          formControlName="symbols"
+        />
+        <div class="flex flex-col">
+          <label class="text-base-600" for="symbols">Symbols</label>
+          <p class="text-sm text-base-500">
+            Include characters (e.g., !, #, $) in the password
+          </p>
+        </div>
+      </fieldset>
+
+      <!-- uppercase checkbox -->
+      <fieldset class="flex gap-2">
+        <input
+          name="uppercase"
+          type="checkbox"
+          class="form-checkbox mt-1 h-4 w-4 rounded border-primary text-primary focus:ring-primary focus:ring-offset-base-200"
+          formControlName="uppercase"
+        />
+        <div class="flex flex-col">
+          <label class="text-base-600" for="uppercase">Uppercase</label>
+          <p class="text-sm text-base-500">
+            Include uppercase letters (A-Z) in the password
+          </p>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- input range -->
+    <fieldset class="relative flex items-center">
+      <input
+        id="range"
+        type="range"
+        min="8"
+        max="64"
+        class="h-[7px] w-full cursor-pointer appearance-none rounded"
+        formControlName="length"
+      />
+      <!-- progress bar styled with primary color -->
+      <div
+        id="progress-bar"
+        class="absolute z-10 h-[7px] rounded bg-primary"
+        [ngStyle]="{
+          width: ((passwordForm.value.length - 6) / 58) * 100 + '%'
+        }"
+      ></div>
+    </fieldset>
+  </div>
+</form>
