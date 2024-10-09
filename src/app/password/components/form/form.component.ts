@@ -9,12 +9,12 @@ import {
 import { PasswordOptionsInterface } from '../../types/password-options.interface';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [NgStyle, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './form.component.html',
 })
 export class FormComponent implements OnInit, OnDestroy {
