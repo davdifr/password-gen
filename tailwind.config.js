@@ -13,6 +13,7 @@ module.exports = {
         900: "hsl(var(--base-900) / <alpha-value>)",
       },
       primary: "hsl(var(--primary) / <alpha-value>)",
+      transparent: "transparent",
     },
     fontFamily: {
       mono: ["Roboto Mono", "sans-serif"],
