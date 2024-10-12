@@ -75,17 +75,22 @@
 
     <!-- password bubble -->
     <div
-      class="absolute -left-[23px] top-6 rounded-lg bg-primary px-3 py-1"
+      class="absolute top-6 flex size-6 items-center justify-center rounded-full bg-primary"
       [ngStyle]="{
-        'margin-left': ((passwordForm.value.length - 6) / 58) * 100 + '%'
+        left:
+          'calc(' +
+          ((passwordForm.value.length - 6) / 58) * 100 +
+          '% - ' +
+          (1.5 + ((passwordForm.value.length - 6) / 58) * 8) +
+          'px)',
+        transform: 'translateX(-50%)'
       }"
     >
-      <!-- triangle bubble decoration -->
+      <!-- triangle -->
       <span
-        class="border-r-transparent border-l-transparent absolute -top-3 left-1/2 size-0 -translate-x-1/2 translate-y-1/2 transform border-b-8 border-l-8 border-r-8 border-b-primary"
+        class="absolute -top-[9.5px] left-1/2 -z-10 size-0 -translate-x-1/2 translate-y-1/2 transform border-b-[9px] border-l-[9px] border-r-[9px] border-b-primary border-l-transparent border-r-transparent"
       ></span>
-      <!-- password length value -->
-      <span>{{ passwordForm.value.length }}</span>
+      <span class="font-mono text-sm">{{ passwordForm.value.length }}</span>
     </div>
   </fieldset>
 </form>
