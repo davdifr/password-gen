@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 html {
-  @apply font-sans bg-base-100 text-base-900;
+  @apply bg-base-100 font-sans text-base-900;
 }
 
 @layer base {
